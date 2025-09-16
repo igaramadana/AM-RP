@@ -1,5 +1,12 @@
+--[[
+    https://github.com/overextended/ox_lib
+
+    This file is licensed under LGPL-3.0 or higher <https://www.gnu.org/licenses/lgpl-3.0.en.html>
+
+    Copyright © 2025 Linden <https://github.com/thelindat>
+]]
+
 ---@async
----@package
 ---@generic T : string | number
 ---@param request function
 ---@param hasLoaded function
@@ -13,12 +20,10 @@ function lib.streamingRequest(request, hasLoaded, assetType, asset, timeout, ...
 
     request(asset, ...)
 
-    -- i hate fivem developers
-    lib.print.verbose(("Loading %s '%s' - remember to release it when done."):format(assetType, asset))
-
     return lib.waitFor(function()
-        if hasLoaded(asset) then return asset end
-    end, ("failed to load %s '%s' - this is likely caused by unreleased assets"):format(assetType, asset), timeout or 10000)
+            if hasLoaded(asset) then return asset end
+        end, ("failed to load %s '%s' - this may be caused by\n- too many loaded assets\n- oversized, invalid, or corrupted assets"):format(assetType, asset),
+        timeout or 30000)
 end
 
 return lib.streamingRequest

@@ -1,3 +1,11 @@
+--[[
+    https://github.com/overextended/ox_lib
+
+    This file is licensed under LGPL-3.0 or higher <https://www.gnu.org/licenses/lgpl-3.0.en.html>
+
+    Copyright © 2025 Linden <https://github.com/thelindat>
+]]
+
 ---@alias NotificationPosition 'top' | 'top-right' | 'top-left' | 'bottom' | 'bottom-right' | 'bottom-left' | 'center-right' | 'center-left'
 ---@alias NotificationType 'info' | 'warning' | 'success' | 'error'
 ---@alias IconAnimationType 'spin' | 'spinPulse' | 'spinReverse' | 'pulse' | 'beat' | 'fade' | 'beatFade' | 'bounce' | 'shake'
@@ -23,13 +31,24 @@ local settings = require 'resource.settings'
 ---@param data NotifyProps
 ---@diagnostic disable-next-line: duplicate-set-field
 function lib.notify(data)
-    local color = 0
-    if data.type == 'info' and data.type == 'success' then color = 3 elseif data.type == 'error' then color = 2 else color = 1 end
-    TriggerEvent('notifications:sendNotification', color, data.description, 5000)
-end
+    local sound = settings.notification_audio and data.sound
+    data.sound = nil
+    data.position = data.position or settings.notification_position
 
-function lib.defaultNotify(data)
-    TriggerEvent('notifications:sendNotification', 1, data.description, 5000)
+    SendNUIMessage({
+        action = 'notify',
+        data = data
+    })
+
+    if not sound then return end
+
+    if sound.bank then lib.requestAudioBank(sound.bank) end
+
+    local soundId = GetSoundId()
+    PlaySoundFrontend(soundId, sound.name, sound.set, true)
+    ReleaseSoundId(soundId)
+
+    if sound.bank then ReleaseNamedScriptAudioBank(sound.bank) end
 end
 
 ---@class DefaultNotifyProps

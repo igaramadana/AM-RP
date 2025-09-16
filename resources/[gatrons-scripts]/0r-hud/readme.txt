@@ -1,0 +1,2 @@
+To Download The File You Need To Join Our Discord And Before Complaining About Why It Isn't Direct Download There Is Other Method Avalable To Pay 10,20,30 Or More Dollars And That Procees Also Takes More Time Then Joining Discord To Download So Is That Is Too Much To Ask For Just Joining Discord Server Where We Also Provide Support And Other Free Scipts With Direct Download Also?
+Think About It And Here Is The Link To Join The Discord Server And Get Your Script - https://discord.gg/9uRB7kuAWF

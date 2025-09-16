@@ -1,3 +1,11 @@
+--[[
+    https://github.com/overextended/ox_lib
+
+    This file is licensed under LGPL-3.0 or higher <https://www.gnu.org/licenses/lgpl-3.0.en.html>
+
+    Copyright © 2025 Linden <https://github.com/thelindat>
+]]
+
 ---@type promise?
 local alert = nil
 local alertId = 0
@@ -12,7 +20,7 @@ local alertId = 0
 ---@field labels? {cancel?: string, confirm?: string}
 
 ---@param data AlertDialogProps
----@param timeout number Force the window to timeout after `x` milliseconds.
+---@param timeout? number Force the window to timeout after `x` milliseconds.
 ---@return 'cancel' | 'confirm' | nil
 function lib.alertDialog(data, timeout)
     if alert then return end

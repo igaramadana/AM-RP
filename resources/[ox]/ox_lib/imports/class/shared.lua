@@ -1,5 +1,13 @@
+--[[
+    https://github.com/overextended/ox_lib
+
+    This file is licensed under LGPL-3.0 or higher <https://www.gnu.org/licenses/lgpl-3.0.en.html>
+
+    Copyright © 2025 Linden <https://github.com/thelindat>
+]]
+
 ---@diagnostic disable: invisible
-lib.print.warn('ox_lib\'s class module is experimental and may break without warning.')
+local getinfo = debug.getinfo
 
 ---Ensure the given argument or property has a valid type, otherwise throwing an error.
 ---@param id number | string
@@ -31,7 +39,6 @@ end
 ---@field protected constructor? OxClassConstructor
 local mixins = {}
 local constructors = {}
-local getinfo = debug.getinfo
 
 ---Somewhat hacky way to remove the constructor from the class.__index.
 ---Maybe add static fields in the future?
@@ -50,15 +57,14 @@ end
 local function void() return '' end
 
 ---Creates a new instance of the given class.
+---@protected
 ---@generic T
 ---@param class T | OxClass
 ---@return T
 function mixins.new(class, ...)
     local constructor = getConstructor(class)
-
-    local obj = setmetatable({
-        private = {}
-    }, class)
+    local private = {}
+    local obj = setmetatable({ private = private }, class)
 
     if constructor then
         local parent = class
@@ -75,8 +81,8 @@ function mixins.new(class, ...)
 
     rawset(obj, 'super', nil)
 
-    if next(obj.private) then
-        local private = table.clone(obj.private)
+    if private ~= obj.private or next(obj.private) then
+        private = table.clone(obj.private)
 
         table.wipe(obj.private)
         setmetatable(obj.private, {
@@ -128,8 +134,10 @@ end
 
 ---Creates a new class.
 ---@generic S : OxClass
----@param name string
+---@generic T : string
+---@param name `T`
 ---@param super? S
+---@return `T`
 function lib.class(name, super)
     assertType(1, name, 'string')
 

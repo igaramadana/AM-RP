@@ -240,7 +240,7 @@ Config.Menus = {
 }
 
 Config.Locations = {
-    ["Bennys Workshop"] = {
+    ["Bengkel"] = {
         illegalMechanic = false,
         enableSociety = true,
         job = "mechanic",
@@ -251,7 +251,7 @@ Config.Locations = {
         blipSprite = 446,
         blipColor = 4,
         blipCoords = vector3(-211.2, -1323.79, 30.22),
-        -- bossMenu = vector3(-216.13, -1317.89, 30.89),
+        bossMenu = vector3(-216.13, -1317.89, 30.89),
     }
 }
 

@@ -1,11 +1,11 @@
---$$$$$$$\  $$\      $$\       $$$$$$$$\ $$\   $$\  $$$$$$\  $$\      $$\   $$\  $$$$$$\  $$$$$$\ $$\    $$\ $$$$$$$$\      $$$$$$\   $$$$$$\  $$$$$$$\  $$$$$$\ $$$$$$$\ $$$$$$$$\  $$$$$$\  
---$$  ____| $$$\    $$$ |      $$  _____|$$ |  $$ |$$  __$$\ $$ |     $$ |  $$ |$$  __$$\ \_$$  _|$$ |   $$ |$$  _____|    $$  __$$\ $$  __$$\ $$  __$$\ \_$$  _|$$  __$$\\__$$  __|$$  __$$\ 
+--$$$$$$$\  $$\      $$\       $$$$$$$$\ $$\   $$\  $$$$$$\  $$\      $$\   $$\  $$$$$$\  $$$$$$\ $$\    $$\ $$$$$$$$\      $$$$$$\   $$$$$$\  $$$$$$$\  $$$$$$\ $$$$$$$\ $$$$$$$$\  $$$$$$\
+--$$  ____| $$$\    $$$ |      $$  _____|$$ |  $$ |$$  __$$\ $$ |     $$ |  $$ |$$  __$$\ \_$$  _|$$ |   $$ |$$  _____|    $$  __$$\ $$  __$$\ $$  __$$\ \_$$  _|$$  __$$\\__$$  __|$$  __$$\
 --$$ |      $$$$\  $$$$ |      $$ |      \$$\ $$  |$$ /  \__|$$ |     $$ |  $$ |$$ /  \__|  $$ |  $$ |   $$ |$$ |          $$ /  \__|$$ /  \__|$$ |  $$ |  $$ |  $$ |  $$ |  $$ |   $$ /  \__|
---$$$$$$$\  $$\$$\$$ $$ |      $$$$$\     \$$$$  / $$ |      $$ |     $$ |  $$ |\$$$$$$\    $$ |  \$$\  $$  |$$$$$\ $$$$$$\\$$$$$$\  $$ |      $$$$$$$  |  $$ |  $$$$$$$  |  $$ |   \$$$$$$\  
---\_____$$\ $$ \$$$  $$ |      $$  __|    $$  $$<  $$ |      $$ |     $$ |  $$ | \____$$\   $$ |   \$$\$$  / $$  __|\______|\____$$\ $$ |      $$  __$$<   $$ |  $$  ____/   $$ |    \____$$\ 
+--$$$$$$$\  $$\$$\$$ $$ |      $$$$$\     \$$$$  / $$ |      $$ |     $$ |  $$ |\$$$$$$\    $$ |  \$$\  $$  |$$$$$\ $$$$$$\\$$$$$$\  $$ |      $$$$$$$  |  $$ |  $$$$$$$  |  $$ |   \$$$$$$\
+--\_____$$\ $$ \$$$  $$ |      $$  __|    $$  $$<  $$ |      $$ |     $$ |  $$ | \____$$\   $$ |   \$$\$$  / $$  __|\______|\____$$\ $$ |      $$  __$$<   $$ |  $$  ____/   $$ |    \____$$\
 --$$\   $$ |$$ |\$  /$$ |      $$ |      $$  /\$$\ $$ |  $$\ $$ |     $$ |  $$ |$$\   $$ |  $$ |    \$$$  /  $$ |          $$\   $$ |$$ |  $$\ $$ |  $$ |  $$ |  $$ |        $$ |   $$\   $$ |
 --\$$$$$$  |$$ | \_/ $$ |      $$$$$$$$\ $$ /  $$ |\$$$$$$  |$$$$$$$$\\$$$$$$  |\$$$$$$  |$$$$$$\    \$  /   $$$$$$$$\     \$$$$$$  |\$$$$$$  |$$ |  $$ |$$$$$$\ $$ |        $$ |   \$$$$$$  |
--- \______/ \__|     \__|      \________|\__|  \__| \______/ \________|\______/  \______/ \______|    \_/    \________|     \______/  \______/ \__|  \__|\______|\__|        \__|    \______/ 
+-- \______/ \__|     \__|      \________|\__|  \__| \______/ \________|\______/  \______/ \______|    \_/    \________|     \______/  \______/ \__|  \__|\______|\__|        \__|    \______/
 -- JOIN OUR DISCORD FOR MORE LEAKS: discord.gg/fivemscripts
 Framework = nil
 PlayerData = {}
@@ -26,11 +26,11 @@ Citizen.CreateThread(function()
 end)
 
 openBossMenu = function(jobName)
-	if Config.Framework == "esx" then
-		TriggerEvent("esx_society:openBossMenu", jobName)
-	elseif Config.Framework == "qbcore" then
-		TriggerServerEvent("qb-bossmenu:server:openMenu")
-	end
+    if Config.Framework == "esx" then
+        TriggerEvent("esx_society:openBossMenu", jobName)
+    elseif Config.Framework == "qbcore" then
+        TriggerServerEvent("qb-management:server:openMenu")
+    end
 end
 
 drawText = function(x, y, z, scale, text)
@@ -57,24 +57,24 @@ ShowHelpNotification = function(text)
 end
 
 ShowNotification = function(message, flash)
-	BeginTextCommandThefeedPost("STRING")
+    BeginTextCommandThefeedPost("STRING")
     AddTextComponentSubstringPlayerName(message)
-	EndTextCommandThefeedPostTicker(flash, 1)
+    EndTextCommandThefeedPostTicker(flash, 1)
 end
 
 getVehicleProperties = function(vehicle)
-	if DoesEntityExist(vehicle) then
-		local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicle)
+    if DoesEntityExist(vehicle) then
+        local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicle)
 
         local colorPrimary, colorSecondary = GetVehicleColours(vehicle)
         if GetIsVehiclePrimaryColourCustom(vehicle) then
             local r, g, b = GetVehicleCustomPrimaryColour(vehicle)
-            colorPrimary = {r, g, b}
+            colorPrimary = { r, g, b }
         end
 
         if GetIsVehicleSecondaryColourCustom(vehicle) then
             local r, g, b = GetVehicleCustomSecondaryColour(vehicle)
-            colorSecondary = {r, g, b}
+            colorSecondary = { r, g, b }
         end
 
         local extras = {}
@@ -171,13 +171,13 @@ getVehicleProperties = function(vehicle)
             modKit49 = GetVehicleMod(vehicle, 49),
             liveryRoof = GetVehicleRoofLivery(vehicle),
         }
-	else
-		return
-	end
+    else
+        return
+    end
 end
 
 setVehicleProperties = function(vehicle, props)
-	if DoesEntityExist(vehicle) and props then
+    if DoesEntityExist(vehicle) and props then
         if props.extras then
             for id, enabled in pairs(props.extras) do
                 if enabled then
@@ -243,7 +243,6 @@ setVehicleProperties = function(vehicle, props)
             SetVehicleWheelType(vehicle, props.wheels)
         end
         if props.windowTint then
-
             SetVehicleWindowTint(vehicle, props.windowTint)
         end
         if props.windowStatus then
@@ -445,7 +444,7 @@ setVehicleProperties = function(vehicle, props)
         if props.liveryRoof then
             SetVehicleRoofLivery(vehicle, props.liveryRoof)
         end
-	end
+    end
 end
 
 RequestAndWaitModel = function(model)
@@ -475,10 +474,10 @@ end)
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function()
     TriggerCallback("0r-mechanic:server:getVehData", function(data)
-		if not data then
-			return 
-		end
-		vehData = data
+        if not data then
+            return
+        end
+        vehData = data
     end)
     PlayerData = Framework.GetPlayerData()
 end)
@@ -486,10 +485,10 @@ end)
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     TriggerCallback("0r-mechanic:server:getVehData", function(data)
-		if not data then
-			return
-		end
-		vehData = data
+        if not data then
+            return
+        end
+        vehData = data
     end)
     PlayerData = Framework.Functions.GetPlayerData()
 end)
@@ -523,11 +522,11 @@ end)
 TriggerCallback = function(cbName, cb, data)
     if Config.Framework == "esx" then
         Framework.TriggerServerCallback(cbName, function(output)
-            if cb then cb(output) else return output end  
+            if cb then cb(output) else return output end
         end, data)
     elseif Config.Framework == "qbcore" then
         Framework.Functions.TriggerCallback(cbName, function(output)
-            if cb then cb(output) else return output end  
+            if cb then cb(output) else return output end
         end, data)
     end
 end
