@@ -1,0 +1,1 @@
+gg.fuel = gg.fuel or {}

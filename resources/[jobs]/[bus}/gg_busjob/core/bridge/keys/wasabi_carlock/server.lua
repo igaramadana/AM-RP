@@ -1,0 +1,1 @@
+gg.keys = gg.keys or {}
