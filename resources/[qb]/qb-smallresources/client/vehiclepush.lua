@@ -21,14 +21,17 @@ RegisterNetEvent('vehiclepush:client:push', function(veh)
                 if #(pos - vehPos) < 3.0 and not IsPedInAnyVehicle(ped, false) then
                     if #(vehPos + GetEntityForwardVector(veh) - pos) > #(vehPos + GetEntityForwardVector(veh) * -1 - pos) then
                         isInFront = false
-                        AttachEntityToEntity(ped, veh, GetPedBoneIndex(ped, 6286), 0.0, dimension.y - 0.3, dimension.z + 1.0, 0.0, 0.0, 0.0, false, false, false, true, 0, true)
+                        AttachEntityToEntity(ped, veh, GetPedBoneIndex(ped, 6286), 0.0, dimension.y - 0.3,
+                            dimension.z + 1.0, 0.0, 0.0, 0.0, false, false, false, true, 0, true)
                     else
                         isInFront = true
-                        AttachEntityToEntity(ped, veh, GetPedBoneIndex(ped, 6286), 0.0, dimension.y * -1 + 0.1, dimension.z + 1.0, 0.0, 0.0, 180.0, false, false, false, true, 0, true)
+                        AttachEntityToEntity(ped, veh, GetPedBoneIndex(ped, 6286), 0.0, dimension.y * -1 + 0.1,
+                            dimension.z + 1.0, 0.0, 0.0, 180.0, false, false, false, true, 0, true)
                     end
                     loadAnimDict('missfinale_c2ig_11')
-                    TaskPlayAnim(ped, 'missfinale_c2ig_11', 'pushcar_offcliff_m', 2.0, -8.0, -1, 35, 0, false, false, false)
-                    exports['qb-core']:DrawText(Lang:t('pushcar.stop_push'),'left')
+                    TaskPlayAnim(ped, 'missfinale_c2ig_11', 'pushcar_offcliff_m', 2.0, -8.0, -1, 35, 0, false, false,
+                        false)
+                    exports['qb-core']:DrawText(Lang:t('pushcar.stop_push'), 'left')
                     while true do
                         Wait(0)
                         if IsDisabledControlPressed(0, 34) then
@@ -60,11 +63,11 @@ RegisterNetEvent('vehiclepush:client:push', function(veh)
 end)
 
 CreateThread(function()
-    exports['qb-target']:AddTargetBone({'bonnet', 'boot'}, {
+    exports['qb-target']:AddTargetBone({ 'bonnet', 'boot' }, {
         options = {
             {
                 icon = 'fas fa-wrench',
-                label = 'Push Vehicle',
+                label = 'Dorong Kendaraan',
                 action = function(entity)
                     TriggerEvent('vehiclepush:client:push', entity)
                 end,
