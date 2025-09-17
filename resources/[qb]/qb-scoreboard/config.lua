@@ -1,7 +1,7 @@
 Config = Config or {}
 
 Config.Toggle = true
-Config.OpenKey = 'HOME'
+Config.OpenKey = 'F5'
 Config.ShowIDforALL = false
 Config.MaxPlayers = GetConvarInt('sv_maxclients', 48)
 
