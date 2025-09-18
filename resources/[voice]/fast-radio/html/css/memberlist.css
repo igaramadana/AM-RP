@@ -1,0 +1,145 @@
+.memberlist {
+    display: none;
+}
+.radio_memberlist {
+    position: absolute;
+    /* display: none; */
+}
+
+.radio_memberlist_header {
+    width: 9.114583333333332vw;
+    height: 7.604166666666666vw;
+    flex-shrink: 0;
+    background-image: url("../img/member_header.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0vw;
+    position: relative;
+    top: 4.583333333333333vw;
+    right: 0.3645833333333333vw;
+}
+
+.radio_memberlist_member-box {
+    position: absolute;
+    margin-top: 0.100vw;
+}
+
+.radio_memberlist_header-1 {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: Arame;
+    font-size: 0.625vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.radio_memberlist_header-2 {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: Arame-Regular;
+    font-size: 0.625vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    left: 0.26041666666666663vw;
+}
+
+.radio_memberlist_header_text {
+    position: relative;
+    top: 3.3854166666666665vw;
+    left: 0.5729166666666666vw;
+    justify-content: left;
+}
+
+.radio_memberlist_membercount {
+    color: #0F6;
+    width: 1.5625vw;
+    font-family: Arame;
+    font-size: 0.78125vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+    position: relative;
+    /* background-color: bisque; */
+    text-align: center;
+    bottom: 0.10416666666666667vw;
+    left: 1.3020833333333335vw;
+}
+
+.radio_memberlist_container {
+    width: 9.114583333333332vw;
+    height: 7.604166666666666vw;
+    /* padding-top: 5.208333333333334vw; */
+    flex-shrink: 0;
+    background: linear-gradient(90deg,rgba(20, 20, 20, 0.57) 0%,rgba(20, 20, 20, 0) 100%);
+    position: absolute;
+    flex-direction: column;
+    right: 0.2645833333333333vw;
+    top: 9.06vw;
+}
+
+.radio_memberlist_member-box {
+    width: 8.103177083333332vw;
+    height: 1.4496354166666667vw;
+    flex-shrink: 0;
+    border-radius: 0.10416666666666667vw;
+    background: linear-gradient(90deg, rgba(33, 33, 33, 0.60) 0%, rgba(33, 33, 33, 0.00) 100%);
+    position: relative;
+    left: 0.26041666666666663vw;
+    top: 0.10416666666666667vw;
+}
+
+.radio_memberlist-liness {
+    background-color: #ffffff;
+    width: 0.10416666666666667vw;
+    height: 7.604166666666666vw;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    right: 9.35vw;
+    top: 9.06vw;
+}
+
+.radio_memberlist_member-box-icon {
+    width: 0.9895833333333333vw;
+    height: 0.9895833333333333vw;
+    flex-shrink: 0;
+    fill: radial-gradient(50% 50% at 50% 50%, #FFF 0%, #999 100%);
+    background-image: url("../img/memberlist_connection.png");
+    background-position: 0vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 0.26875vw;
+    left: 0.46875vw;
+}
+
+.radio_memberlist_member-box-name {
+    width: 4.752239583333333vw;
+    height: 0.6092708333333333vw;
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.80);
+    font-family: Gilroy-Medium;
+    font-size: 0.6092708333333333vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    /* background-color: wheat; */
+    text-align: left;
+    bottom: 0.5945833333333333vw;
+    left: 1.875vw;
+}
+
+.radio_memberlist_member-box-mic {
+    width: 0.60078125vw;
+    height: 0.8235416666666667vw;
+    flex-shrink: 0;
+    background-image: url("../img/mic.png");
+    background-size: contain;
+    background-position: 0vw;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 1.2295833333333333vw;
+    left: 7.027083333333334vw;
+}

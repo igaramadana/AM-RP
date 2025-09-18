@@ -11,9 +11,6 @@ local Translations = {
         ["citizenid"] = "Citizen ID",
         ["citizenid_help"] = "The Citizen ID of the character you want to delete",
 
-        --Loaded
-       
-
         -- /logout
         ["logout_description"] = "Logout of Character (Admin Only)",
 
@@ -22,45 +19,56 @@ local Translations = {
     },
 
     misc = {
-        ["succes_loaded"] = '^2[qb-core]^7 %{value} has succesfully loaded!',
         ["droppedplayer"] = "You have disconnected from QBCore"
     },
 
     ui = {
         -- Main
+        characters_header = "My Characters",
+        emptyslot = "Empty Slot",
+        play_button = "Play",
+        create_button = "Create Character",
+        delete_button = "Delete Character",
+
+        -- Character Information
+        charinfo_header = "Character Information",
+        charinfo_description = "Select a character slot to see all information about your character.",
+        name = "Name",
         male = "Male",
         female = "Female",
-        error_title = "Error!",
-        characters_header = "Character Selector",
-        characters_count = "characters",
-      
-         --Setup Characters
-        default_image = 'assets/profile.png', --You can 'assets/yourimage.png' or any put "any link you want"
-       create_new_character = "Create new character",
-       default_right_image = 'assets/image2.png', --You can 'assets/yourimage.png' or any put "any link you want"
+        firstname = "First Name",
+        lastname = "Last Name",
+        nationality = "Nationality",
+        gender = "Gender",
+        birthdate = "Birthdate",
+        job = "Job",
+        jobgrade = "Job Grade",
+        cash = "Cash",
+        bank = "Bank",
+        phonenumber = "Phone Number",
+        accountnumber = "Account Number",
 
-        --Create character
-        create_header = "Identity Creation",
-        header_detail = "Enter your character detalls",
-        gender_marker = "Gender Marker",
-        
-        missing_information = "You wrote missing information.",
-        badword = "You have used a bad word, try again!",
-       
-        create_firstname = "Name",
-        create_lastname = "Lastname",
-        create_nationality = "Nationality",
-        create_birthday = "Birthday",
+        chardel_header = "Character Registration",
+
+        -- Delete character
+        deletechar_header = "Delete Character",
+        deletechar_description = "Are You Sure You Want To Delete Your Character?",
 
         -- Buttons
-        select = "Select",
-        create = "Create",
-        spawn = "Spawn",
-        delete = "Delete",
         cancel = "Cancel",
         confirm = "Confirm",
-        close = "Close",}
 
+        -- Loading Text
+        retrieving_playerdata = "Retrieving player data",
+        validating_playerdata = "Validating player data",
+        retrieving_characters = "Retrieving characters",
+        validating_characters = "Validating characters",
+
+        -- Notifications
+        ran_into_issue = "We ran into an issue",
+        profanity = "It seems like you are trying to use some type of profanity / bad words in your name or nationality!",
+        forgotten_field = "It seems like you have forgotten to input one or multiple of the fields!"
+    }
 }
 
 Lang = Lang or Locale:new({

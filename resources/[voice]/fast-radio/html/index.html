@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/memberlist.css">
+    <title>fast-radio</title>
+</head>
+<body>
+    <div class="radio" id="radio-main-con">
+        <div class="container" id="radio">
+            <div class="radio_ui_container">
+                <div class="radio_statusbar">
+                    <div class="radio_statusbar_clock" id="server_time">12:00</div>
+                </div>
+                <div class="radio_userprofile">
+                    <div class="radio_userprofile_header">
+                        <div class="radio_userprofile_header-1" id="profile-header-1">YOUR</div>
+                        <div class="radio_userprofile_header-2" id="profile-header-2">PROFILE</div>
+                    </div>
+                    
+                    <div class="radio_userprofile_photo"></div>
+                    <div class="radio_userprofile_userdetailsbox">
+                        <div class="radio_userprofile_firstname" id="firstname">Thomas</div>
+                        <div class="radio_userprofile_lastname" id="lastname">Richardson</div>
+                    </div>
+                    <div class="radio_userprofile_dateandtime">
+                        <div class="radio_userprofile_time" id="server_time-2">01:00</div>
+                        <div class="radio_userprofile_date" id="date">01.01.2024</div>
+                    </div>
+                </div>
+                <div class="radio_switchtab" >
+                    <div class="radio_maintab_button" id="radio_maintab_button">
+                        <div class="radio_maintab_button-text" id="radio_maintab_button-text">MAIN</div>
+                    </div>
+                    <div class="radio_channelstab_button" id="radio_channelstab_button">
+                        <div class="radio_channelstab_button-text" id="radio_channelstab_button-text">CHANNELS</div>
+                    </div>
+                </div>
+                <div class="radio_enterfrequency" id="radio_enterfrequency">
+                    <div class="radio_enterfreq_header">
+                        <div class="radio_enterfreq_header-1" id="enter-header">ENTER</div>
+                        <div class="radio_enterfreq_header-2" id="frequency-header">FREQUENCY</div>
+                    </div>
+                    <input type="number" placeholder="33.1" class="radio_enterfreq_con" id="radio_enterfreq_con">
+                    <div class="radio_enterfreq_connect-btn" id="radio_enterfreq_connect-btn">
+                        <div class="radio_enterfreq_connect-btn-text" id="connect-text">CONNECT</div>
+                    </div>
+                    <div class="radio_enterfreq_favbutton" id="radio_enterfreq_favbutton">
+                        <div class="radio_enterfreq_icon" id="radio_enterfreq_icon"></div>
+                    </div>
+                    <div class="radio_enterfreq_volumeup-btn" id="increase-volume-btn">
+                        <div class="radio_enterfreq_volumeup-btn-icon"></div> <!-- Volume Up -->
+                    </div>
+
+                    <div class="radio_enterfreq_volumedown-btn" id="decrease-volume-btn">
+                        <div class="radio_enterfreq_volumedown-btn-icon"></div> <!-- Volume Down -->
+                    </div>
+
+                </div>
+                <div class="radio_settings" id="radio_settings">
+                    <div class="radio_settings_header">
+                        <div class="radio_settings_header-1" id="radio-header">RADIO</div>
+                        <div class="radio_settings_header-2" id="settings-header">SETTINGS</div>
+                    </div>
+                    <div class="radio_settings_size">
+                        <div class="radio_settings_size-txt" id="radio-size-text">Radio Size</div>
+                        <input type="range" name="range" value="0" min="0" max="100" id="radio_settings-size-slider" class="radio_settings-size-slider">
+                    </div>
+                    <div class="radio_settings_memberlist-txt" id="memberlist-text">Member List</div>
+                    <div class="radio_settings_memberlist_flipswitch">
+                        <input type="checkbox" name="radio_settings_memberlist_flipswitch" class="radio_settings_memberlist_flipswitch-cb" id="fs">
+                        <label class="radio_settings_memberlist_flipswitch-label" for="fs" id="radio_settings_memberlist_flipswitch-label">
+                            <div class="radio_settings_memberlist_flipswitch-inner"></div>
+                            <div class="radio_settings_memberlist_flipswitch-switch" id="radio_settings_memberlist_flipswitch-switch"></div>
+                        </label>
+                    </div>
+    
+                    <div class="radio_settings_move-radio" id="move-radio-text">Move Radio</div>
+                    <div class="radio_settings_move_radio_flipswitch">
+                        <input type="checkbox" name="radio_settings_move_radio_flipswitch" class="radio_settings_move_radio_flipswitch-cb" id="fss" >
+                        <label class="radio_settings_move_radio_flipswitch-label" id="radio_settings_move_radio_flipswitch-label" for="fss">
+                            <div class="radio_settings_move_radio_flipswitch-inner"></div>
+                            <div class="radio_settings_move_radio_flipswitch-switch" id="radio_settings_move_radio_flipswitch-switch"></div>
+                        </label>
+                    </div>
+    
+                    <div class="radio_settings_color_box">
+                        <div class="radio_settings_color" id="radio-color-text">Radio Color</div>
+                        <div class="radio_settings_color_container">
+                            <div class="radio_settings_color_red" id="black"></div>
+                            <div class="radio_settings_color_orange" id="orange"></div>
+                            <div class="radio_settings_color_lime" id="lime"></div>
+                            <div class="radio_settings_color_cyan" id="cyan"></div>
+                            <div class="radio_settings_color_blue" id="blue"></div>
+                            <div class="radio_settings_color_purple" id="purple"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="radio_fav_channels" id="radio_fav_channels" style="display: none;">
+                    <div class="radio_fav_channels_header">
+                        <div class="radio_fav_channels_header-1" id="favorite-header">FAVORITE</div>
+                        <div class="radio_fav_channels_header-2" id="list-header">LIST</div>
+                    </div>
+    
+                    <div class="radio_fav_channels_listbox" id="favChannelsList">
+                        <!-- <div class="radio_fav_channel-1">
+                            <div class="radio-fav-channel-num">33.1</div>
+                            <div class="radio-fav-hztext">Hz</div>
+                            <div class="radio-fav-star-x"></div>
+                            <div class="radio-fav-connection-status"></div>
+                        </div>
+     -->
+             
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="memberlist" id="memberlist" style="position: absolute">
+        <div class="radio_memberlist" id="radio_memberlist">
+            <div class="radio_memberlist_header" id="radio_memberlist_header">
+                <div class="radio_memberlist_header_text" style="display: flex;">
+                    <div class="radio_memberlist_header-1" id="radio_memberlist_header-1">RADIO</div>
+                    <div class="radio_memberlist_header-2" id="radio_memberlist_header-2">MEMBER LIST</div>
+                    <div class="radio_memberlist_membercount" id="radio_memberlist_membercount">3</div>
+                </div>
+            </div>
+            <div class="radio_memberlist-liness" id="radio_memberlist-liness"></div>
+            <div class="radio_memberlist_container" id="radio_memberlist_container">
+                
+                <div class="radio_memberlist_member-box" id="radio_memberlist_member">
+                    <!-- <div class="radio-memberlist-box"> -->
+                        <!-- <div class="radio_memberlist_member-box-icon"></div>
+                        <div class="radio_memberlist_member-box-name">Alex Hard</div>
+                        <div class="radio_memberlist_member-box-mic"></div> -->
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+<script src="js/script.js"></script>
+<script src="js/node_modules/animejs/lib/anime.min.js"></script>
+</html>
